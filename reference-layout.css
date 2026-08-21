@@ -1,0 +1,34 @@
+/* ---------- Reference layout: alinhamentos e suportes ---------- */
+/* Harmoniza a grade geral de seções e espaçamentos do cardápio. */
+
+.products,.featured{
+  container-type:inline-size;
+}
+.product .info h3{
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.product .info .desc{
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.story,.order-journey,.faq,.service-band{
+  scroll-margin-top:84px;
+}
+.hero,.section,.story{
+  scroll-margin-top:70px;
+}
+
+/* Ponto de apoio visual: linha sutil sob o cabeçalho de seção */
+.head::after{
+  content:"";flex:none;
+  height:2px;width:56px;border-radius:2px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  margin:0 0 8px auto;
+}
+
+/* Mantém links de âncora visíveis com header fixo */
+:target{scroll-margin-top:96px}
+
+/* Acessibilidade */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}

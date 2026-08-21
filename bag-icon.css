@@ -1,0 +1,33 @@
+/* ---------- Botão Sacola ---------- */
+.bag{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--ink);color:var(--cream);
+  border-radius:999px;padding:11px 18px;
+  font-weight:700;font-size:.9rem;
+  transition:transform .2s var(--ease),background .2s;
+}
+.bag:hover{background:var(--red);transform:translateY(-1px)}
+.bag b{
+  background:var(--red);color:#fff;
+  min-width:24px;height:24px;border-radius:999px;
+  display:grid;place-items:center;font-size:.74rem;padding:0 5px;
+  transition:background .2s;
+}
+.bag:hover b{background:var(--ink)}
+.bag::before{
+  content:"";width:17px;height:17px;flex:none;
+  background:currentColor;
+  -webkit-mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 8.5h13l-1 11h-11l-1-11Z"/><path d="M9 9V6.8a3 3 0 0 1 6 0V9" fill="none" stroke="white" stroke-width="1.8"/></svg>') center/contain no-repeat;
+  mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 8.5h13l-1 11h-11l-1-11Z"/><path d="M9 9V6.8a3 3 0 0 1 6 0V9" fill="none" stroke="white" stroke-width="1.8"/></svg>') center/contain no-repeat;
+}
+
+/* Barra lateral: ícone de cabeçalho */
+.cart-head::before{
+  content:"";width:20px;height:20px;
+  background:var(--red);
+  -webkit-mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 8.5h13l-1 11h-11l-1-11Z"/><path d="M9 9V6.8a3 3 0 0 1 6 0V9" fill="none" stroke="white" stroke-width="1.8"/></svg>') center/contain no-repeat;
+  mask:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.5 8.5h13l-1 11h-11l-1-11Z"/><path d="M9 9V6.8a3 3 0 0 1 6 0V9" fill="none" stroke="white" stroke-width="1.8"/></svg>') center/contain no-repeat;
+  margin-right:auto;
+}
+.cart-head h2{margin-right:auto;margin-left:10px}
+.cart-head button{margin-left:0}

@@ -1,0 +1,35 @@
+/* ---------- Ações flutuantes ---------- */
+.floating-actions{position:fixed;z-index:6;right:21px;bottom:21px;display:grid;gap:9px}
+.floating-actions .floating-cart,.floating-actions .theme,.floating-actions .whats{
+  position:relative;right:auto;bottom:auto;
+  width:55px;height:55px;border-radius:50%;display:grid;place-items:center;
+  box-shadow:0 8px 20px -6px rgba(0,0,0,.3);
+  transition:transform .25s var(--ease);
+}
+.floating-actions .floating-cart:hover{transform:translateY(-3px)}
+.floating-actions .whats:hover{transform:scale(1.12) rotate(-8deg);box-shadow:0 10px 25px #25d36670}
+.floating-actions .theme:hover{transform:rotate(90deg);border-color:var(--red)}
+.floating-cart{
+  border:0;background:var(--red);color:#1c0d06;font-size:23px;cursor:pointer;
+}
+.floating-cart svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.floating-cart b{
+  position:absolute;right:-3px;top:-3px;width:18px;height:18px;border-radius:50%;
+  background:#120b08;color:#fff;font-weight:700;font-size:10px;display:grid;place-items:center;
+}
+.floating-actions .theme{
+  background:var(--ink);border:1px solid var(--line);color:var(--cream);font-size:1.2rem;
+}
+.floating-actions .whats{background:#21cf69;color:#fff;font-size:1.4rem}
+.floating-actions .whats small{
+  position:absolute;right:64px;bottom:50%;transform:translateY(50%);
+  opacity:0;transition:opacity .2s;
+  font-size:.6rem;background:var(--ink);color:var(--cream);
+  border-radius:999px;padding:3px 8px;white-space:nowrap;
+}
+.whats:hover small{opacity:1}
+@media(max-width:760px){
+  .floating-actions{right:16px;bottom:76px}
+  .floating-actions .floating-cart,.floating-actions .theme,.floating-actions .whats{width:50px;height:50px}
+  .floating-actions .theme{display:grid!important}
+}

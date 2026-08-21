@@ -1,0 +1,81 @@
+/* ---------- Experiência: service-band ---------- */
+.service-band{
+  max-width:1200px;margin:24px auto 0;padding:18px 24px;
+  border:1px solid var(--line);border-radius:10px;background:var(--paper);
+  display:grid;grid-template-columns:repeat(3,1fr) auto;gap:20px;align-items:center;
+}
+.service-band>div{display:flex;align-items:center;gap:11px}
+.service-band span{
+  width:34px;height:34px;border-radius:50%;
+  background:var(--red-soft);color:var(--gold);
+  display:grid;place-items:center;font-size:17px;
+}
+.service-band p{margin:0;display:grid;gap:3px;font-size:12px}
+.service-band b{display:block}
+.service-band small{color:var(--ink-soft);font-size:10px}
+.service-band>a{color:var(--gold);font-size:12px;text-decoration:none;font-weight:bold;white-space:nowrap}
+.service-band>a strong{font-size:17px;margin-left:7px}
+.service-band>a:hover strong{transform:translateX(4px);display:inline-block}
+
+/* ---------- Order journey ---------- */
+.order-journey{
+  background:var(--paper);text-align:center;
+  padding:70px max(24px,calc((100vw - 1280px)/2));
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.order-journey h2{font-size:38px}
+.order-journey>div{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px;text-align:left}
+.order-journey article{border-top:1px solid var(--line);padding:18px 0}
+.order-journey article>b{color:var(--red);font-size:12px;letter-spacing:2px}
+.order-journey h3{font:600 21px "Playfair Display",Georgia,serif;margin:12px 0 7px}
+.order-journey article p{color:var(--ink-soft);font-size:12px;line-height:1.5;margin:0}
+.order-journey article span{font-size:1.6rem;display:block;margin:10px 0 4px;color:var(--gold)}
+
+/* ---------- Story ---------- */
+.story{
+  max-width:var(--maxw);margin:30px auto;padding:60px 20px;
+  display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center;
+}
+.story-art{display:grid;place-items:center}
+.story-art .food.dish{
+  background:
+    radial-gradient(circle at 50% 38%,rgba(255,255,255,.9),rgba(255,255,255,0) 55%),
+    linear-gradient(160deg,var(--gold-soft),var(--red-dark) 65%);
+}
+.story-art .food.dish i{
+  background:linear-gradient(90deg,#fff,var(--red-soft),#fff);
+}
+.story>div>p:not(.eyebrow){color:var(--ink-soft);margin:18px 0 24px;max-width:44ch}
+.facts{display:flex;flex-wrap:wrap;gap:10px}
+.facts span{
+  background:var(--paper);border:1px solid var(--line);
+  border-radius:999px;padding:8px 16px;font-size:.84rem;font-weight:700;
+}
+.facts span::first-letter{color:var(--red)}
+
+/* ---------- Operations ---------- */
+.operations{
+  background:var(--ink);color:var(--cream);
+  border-top:1px solid var(--line);
+}
+.operations>div{
+  background:color-mix(in srgb,var(--cream-2) 55%,var(--ink));
+}
+.operations span{color:var(--gold)}
+.operations small{color:rgba(243,234,219,.6)}
+.operations b{color:var(--cream)}
+
+/* ---------- FAQ ---------- */
+.faq details summary:hover{background:var(--gold-soft)}
+.faq details[open]{border-color:var(--gold)}
+
+/* ---------- Responsivo ---------- */
+@media(max-width:760px){
+  .service-band{margin:14px 16px 0;padding:15px;display:grid;grid-template-columns:1fr 1fr;gap:13px}
+  .service-band>div:last-of-type{display:none}
+  .service-band>a{grid-column:span 2;border-top:1px solid var(--line);padding-top:13px}
+  .order-journey{padding:50px 24px;text-align:left}
+  .order-journey h2{font-size:30px}
+  .order-journey>div{grid-template-columns:1fr;gap:0;margin-top:23px}
+  .order-journey h3{font-size:19px}
+}
