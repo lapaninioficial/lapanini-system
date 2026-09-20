@@ -1,0 +1,62 @@
+Options -Indexes
+ServerSignature Off
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  RewriteCond %{REQUEST_METHOD} GET
+  RewriteRule ^(app|config|storage|database)(/|$) - [F,L]
+
+  RewriteRule ^assets/assets/(.+)$ /assets/$1 [L,R=301]
+  RewriteRule ^assets/(css|js|img)/assets/(.+)$ /assets/$1/$2 [L,R=301]
+
+  RewriteRule ^assets/site\.css$ /assets/css/site.css [L]
+  RewriteRule ^assets/store\.js$ /assets/js/store.js [L]
+  RewriteRule ^assets/la-panini\.svg$ /assets/img/la-panini.svg [L]
+  RewriteRule ^assets/hero-lapanini\.svg$ /assets/img/hero-lapanini.svg [L]
+  RewriteRule ^assets/logo-marca-lapanini\.webp$ /assets/img/logo-marca-lapanini.webp [L]
+
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(env|json|sql|md|log)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_mime.c>
+  AddDefaultCharset UTF-8
+  AddType image/webp .webp
+  AddType image/svg+xml .svg
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>

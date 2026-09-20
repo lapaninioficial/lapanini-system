@@ -1,0 +1,36 @@
+<?php require APP_PATH . '/views/partials/head.php'; ?>
+<header class="header">
+  <a class="brand" href="<?= e(url()) ?>" aria-label="La Panini — página inicial"><img src="<?= e(asset('img/logo-marca-lapanini.webp')) ?>" alt="La Panini"></a>
+</header>
+<main class="policy-page">
+  <a class="policy-back" href="<?= e(url()) ?>">← Voltar para o site</a>
+  <h1>Termos de Uso</h1>
+  <span class="policy-updated">Última atualização: setembro de 2026</span>
+  <p>Ao utilizar o site da La Panini, você concorda com os termos descritos abaixo. Leia com atenção antes de fazer seu pedido.</p>
+  <h2>1. Pedidos e preços</h2>
+  <ul>
+    <li>Os preços exibidos podem ser alterados sem aviso prévio;</li>
+    <li>Cupons de desconto têm validade e condições próprias, divulgadas no site;</li>
+    <li>O pedido é confirmado após o envio e a validação das informações de entrega.</li>
+  </ul>
+  <h2>2. Entrega e retirada</h2>
+  <ul>
+    <li>A entrega é realizada apenas nos bairros e horários informados no site;</li>
+    <li>O valor da taxa de entrega varia conforme o bairro;</li>
+    <li>Retirada grátis mediante apresentação do pedido no endereço indicado;</li>
+    <li>O pagamento é realizado na entrega (Pix, dinheiro, débito ou crédito).</li>
+  </ul>
+  <h2>3. Qualidade dos produtos</h2>
+  <p>Trabalhamos com lasanhas artesanais e frescas. Em caso de qualquer problema com o pedido, entre em contato pelo WhatsApp (19) 99404-8354 em até 24 horas para que possamos resolver.</p>
+  <h2>4. Uso do site</h2>
+  <p>É proibido o uso do site para fins ilícitos, o cadastro de informações falsas e qualquer tentativa de interferir no funcionamento da plataforma.</p>
+  <h2>5. Limitação de responsabilidade</h2>
+  <p>Informações sobre horários, disponibilidade de produtos e áreas de entrega podem sofrer alterações. A La Panini se empenha em manter o site atualizado, mas não se responsabiliza por atrasos causados por imprevistos externos.</p>
+  <h2>6. Contato</h2>
+  <p>Para dúvidas sobre estes termos: (19) 99404-8354 — Campinas · SP.</p>
+</main>
+<footer>
+  <p>© <?= date('Y') ?> La Panini. Lasanhas artesanais, camadas generosas e sabor de verdade.</p>
+</footer>
+</body>
+</html>
